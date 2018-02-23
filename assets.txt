@@ -1,0 +1,4 @@
+We did not pull any assets off the Unity asset store.
+Our game is based off the Roll-a-Ball tutorial for Unity which we did earlier this semester, although most of our code has changed for this project.
+All of our scripts were made by us, though they were influenced a little bit by the Roll-a-Ball tutorial.
+All art assets are also made by the team.
