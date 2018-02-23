@@ -1,0 +1,35 @@
+﻿Checkpoint 1:
+X (M) ability to move ball by tilting map
+X (M) airborne physics
+X (M) controller input
+X (M) first level
+X (M) death by timing out
+X (M) pickups and score keeping
+X (S) next 4 levels
+
+
+Checkpoint 2:
+- (M) resetting platform to a neutral state
+- (M) cap on how far the platforms can tilt
+- (M) level restart on death
+- (M) game over screen / life tracker 
+- (S) make the platforms thicker (planes -> rectangles)
+- (S) level victory screen (replay / next)
+- (S) camera rotates with the ball
+- (C) accelerate / stop ball faster
+- (C) bigger timer
+
+
+Final: 
+- (S) Advanced lighting (and other Special Effects)
+- (S) UI and menuing
+- (C) more levels
+- (C) Minigames
+
+
+M = Must have
+S = Should have
+C = Could have
+
+X = Done
+- = Not done

@@ -1,0 +1,9 @@
+The most pressing question we wanted answered was: "Does this game feel like Monkey Ball," and I think the general consensus was that it didn't. We need to fix our scripts to make the ball accelerate/stop faster, and to make the camera more precise.
+
+Our game worked through and through, although again, it didn't feel like Monkey Ball all to much. Every feature we wanted to implement for this playtest worked, and worked well.
+
+Again, we need to fix the "feel" of the game, which is just minor camera tweaks, as well as some tweaks to physics. Some users said the game controls were a little unintuitive, as they wanted to use the right thumb stick to move the camera. Because we want this to be a good Monkey Ball recreation, we're going to try and implement Monkey Ball's camera before anything else.
+
+We heard a lot of feedback about level ideas and we're very excited to try them out.
+
+Again, the camera and the physics need to be tweaked.
