@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
     
@@ -9,6 +10,7 @@ public class PlayerController : MonoBehaviour {
 	public Text TimerText;
 	public Text loseText;
     public int timeForLevel;
+    public string nextLevel;
 
 	public bool gameOver;
 
@@ -33,12 +35,13 @@ public class PlayerController : MonoBehaviour {
 		winText.text = "";
 		loseText.text = "";
 	}
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Vector3 direction = transform.TransformDirection(rb.velocity) * 5;
-        Gizmos.DrawRay(transform.position, direction);
-    }
+    // shows "forward"
+//    void OnDrawGizmosSelected()
+//    {
+//        Gizmos.color = Color.red;
+//        Vector3 direction = transform.TransformDirection(rb.velocity) * 5;
+ //       Gizmos.DrawRay(transform.position, direction);
+ //   }
     // Update is called once per frame
     void FixedUpdate() { }
 
@@ -58,11 +61,13 @@ public class PlayerController : MonoBehaviour {
 		if (!gameOver && col.gameObject.tag == "Enemy" || currTime <= 0) {
 			loseText.text = "You lose!";
 			gameOver = true;
-		}
+            SceneManager.LoadScene("Scenes/" + "LevelOne");
+        }
         if (!gameOver && col.gameObject.tag == "Goal" && currTime > 0)
         {
             winText.text = "You Win!";
             gameOver = true;
+            SceneManager.LoadScene("Scenes/" + nextLevel);
         }
     }
 
