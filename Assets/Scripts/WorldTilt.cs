@@ -16,9 +16,11 @@ public class WorldTilt : MonoBehaviour {
 		prevHorizontal = 0;
 		prevVertical = 0;
 	}
-	
-	// Update is called once per frame
-	void FixedUpdate () {
+
+
+
+    // Update is called once per frame
+    void FixedUpdate () {
 		Vector3 playerPos = new Vector3 (player.transform.position.x, 0, player.transform.position.z);
 		float moveHorizontal;
 		float moveVertical;
@@ -44,8 +46,14 @@ public class WorldTilt : MonoBehaviour {
                 // Get horizontal and vertical forces from Input
                 moveHorizontal = Input.GetAxis("Horizontal");
                 moveVertical = Input.GetAxis("Vertical");
+
+                //this.transform.RotateAround(player.transform.position, player.transform.right, speed * moveHorizontal * Time.deltaTime);
+                //this.transform.RotateAround(player.transform.position, player.transform.forward, speed * moveVertical * Time.deltaTime);
+
                 this.transform.RotateAround(player.transform.position, Vector3.right, speed * moveHorizontal * Time.deltaTime);
                 this.transform.RotateAround(player.transform.position, Vector3.forward, speed * moveVertical * Time.deltaTime);
+
+
             }
 
 

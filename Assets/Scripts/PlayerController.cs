@@ -33,7 +33,12 @@ public class PlayerController : MonoBehaviour {
 		winText.text = "";
 		loseText.text = "";
 	}
-
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Vector3 direction = transform.TransformDirection(rb.velocity) * 5;
+        Gizmos.DrawRay(transform.position, direction);
+    }
     // Update is called once per frame
     void FixedUpdate() { }
 
