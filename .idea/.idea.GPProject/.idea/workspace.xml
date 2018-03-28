@@ -46,13 +46,13 @@
       <file leaf-file-name="l5_spinplatform.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/l5_spinplatform.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+            <state relative-caret-position="75">
+              <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
               <folding>
-                <marker date="1522263090656" expanded="false" signature="6:44" ph="..." />
-                <marker date="1522263090656" expanded="true" signature="91:253" ph="{...}" />
-                <marker date="1522263090656" expanded="true" signature="122:126" ph="{...}" />
-                <marker date="1522263090656" expanded="true" signature="185:251" ph="{...}" />
+                <marker date="1522263154252" expanded="false" signature="6:44" ph="..." />
+                <marker date="1522263154252" expanded="true" signature="90:268" ph="{...}" />
+                <marker date="1522263154252" expanded="true" signature="137:141" ph="{...}" />
+                <marker date="1522263154252" expanded="true" signature="200:266" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -155,12 +155,12 @@
       <workItem from="1519938168202" duration="46000" />
       <workItem from="1521142874603" duration="414000" />
       <workItem from="1522257959922" duration="1930000" />
-      <workItem from="1522262874166" duration="218000" />
+      <workItem from="1522262874166" duration="281000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2608000" />
+    <option name="totallyTimeSpent" value="2671000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -242,10 +242,10 @@
         <state relative-caret-position="75">
           <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
           <folding>
-            <marker date="1522263090656" expanded="false" signature="6:44" ph="..." />
-            <marker date="1522263090656" expanded="true" signature="91:253" ph="{...}" />
-            <marker date="1522263090656" expanded="true" signature="122:126" ph="{...}" />
-            <marker date="1522263090656" expanded="true" signature="185:251" ph="{...}" />
+            <marker date="1522263154252" expanded="false" signature="6:44" ph="..." />
+            <marker date="1522263154252" expanded="true" signature="90:268" ph="{...}" />
+            <marker date="1522263154252" expanded="true" signature="137:141" ph="{...}" />
+            <marker date="1522263154252" expanded="true" signature="200:266" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -296,13 +296,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/l5_spinplatform.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        <state relative-caret-position="75">
+          <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
           <folding>
-            <marker date="1522263090656" expanded="false" signature="6:44" ph="..." />
-            <marker date="1522263090656" expanded="true" signature="91:253" ph="{...}" />
-            <marker date="1522263090656" expanded="true" signature="122:126" ph="{...}" />
-            <marker date="1522263090656" expanded="true" signature="185:251" ph="{...}" />
+            <marker date="1522263154252" expanded="false" signature="6:44" ph="..." />
+            <marker date="1522263154252" expanded="true" signature="90:268" ph="{...}" />
+            <marker date="1522263154252" expanded="true" signature="137:141" ph="{...}" />
+            <marker date="1522263154252" expanded="true" signature="200:266" ph="{...}" />
           </folding>
         </state>
       </provider>

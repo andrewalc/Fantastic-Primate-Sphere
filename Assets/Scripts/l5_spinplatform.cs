@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class l5_spinplatform : MonoBehaviour {
+public class l5_spinplatform : MonoBehaviour
+{
 
-	//changessdas
+	private int foo;
+
+	//changes
 	void Start(){
 	}
 
