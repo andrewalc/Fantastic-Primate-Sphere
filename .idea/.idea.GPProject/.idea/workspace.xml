@@ -46,13 +46,13 @@
       <file leaf-file-name="l5_spinplatform.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/l5_spinplatform.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+            <state relative-caret-position="75">
+              <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
               <folding>
-                <marker date="1522259643591" expanded="true" signature="6:44" ph="..." />
-                <marker date="1522259643591" expanded="true" signature="91:238" ph="{...}" />
-                <marker date="1522259643591" expanded="true" signature="107:111" ph="{...}" />
-                <marker date="1522259643591" expanded="true" signature="170:236" ph="{...}" />
+                <marker date="1522262752712" expanded="true" signature="6:44" ph="..." />
+                <marker date="1522262752712" expanded="true" signature="91:248" ph="{...}" />
+                <marker date="1522262752712" expanded="true" signature="117:121" ph="{...}" />
+                <marker date="1522262752712" expanded="true" signature="180:246" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -154,12 +154,12 @@
       <updated>1519938167132</updated>
       <workItem from="1519938168202" duration="46000" />
       <workItem from="1521142874603" duration="414000" />
-      <workItem from="1522257959922" duration="826000" />
+      <workItem from="1522257959922" duration="1930000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1286000" />
+    <option name="totallyTimeSpent" value="2390000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -172,7 +172,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="260" y="20" width="1400" height="1000" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -268,13 +267,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/l5_spinplatform.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+        <state relative-caret-position="75">
+          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
           <folding>
-            <marker date="1522259643591" expanded="true" signature="6:44" ph="..." />
-            <marker date="1522259643591" expanded="true" signature="91:238" ph="{...}" />
-            <marker date="1522259643591" expanded="true" signature="107:111" ph="{...}" />
-            <marker date="1522259643591" expanded="true" signature="170:236" ph="{...}" />
+            <marker date="1522262752712" expanded="true" signature="6:44" ph="..." />
+            <marker date="1522262752712" expanded="true" signature="91:248" ph="{...}" />
+            <marker date="1522262752712" expanded="true" signature="117:121" ph="{...}" />
+            <marker date="1522262752712" expanded="true" signature="180:246" ph="{...}" />
           </folding>
         </state>
       </provider>
