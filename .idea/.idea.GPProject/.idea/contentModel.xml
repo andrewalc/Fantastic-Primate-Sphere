@@ -16,7 +16,13 @@
         <e p="Scripts" t="Include">
           <e p="CameraController.cs" t="Include" />
           <e p="EnemyController.cs" t="Include" />
-          <e p="l5_spinplatform.cs" t="Include" />
+          <e p="LevelFive" t="Include">
+            <e p="l5_spinplatform.cs" t="Include" />
+          </e>
+          <e p="LevelSix" t="Include">
+            <e p="l6_platform_l.cs" t="Include" />
+            <e p="l6_platform_r.cs" t="Include" />
+          </e>
           <e p="PlayerController.cs" t="Include" />
           <e p="Rotater.cs" t="Include" />
           <e p="WorldTilt.cs" t="Include" />
