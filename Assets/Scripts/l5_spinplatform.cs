@@ -3,7 +3,7 @@ using System.Collections;
 
 public class l5_spinplatform : MonoBehaviour {
 
-	//changes
+	//changessdas
 	void Start(){
 	}
 
