@@ -5,27 +5,37 @@ public class WorldTilt : MonoBehaviour
 {
 
     public float speed;
-    public float decay_step;
     public GameObject player;
     private float prevHorizontal;
     private float prevVertical;
 
+    private float maxRot = 20;
     private Vector3 prevRotation;
-    private Vector3 prevPostition;
+    private Vector3 initPosition;
+    private Vector3 prevPosition;
 
     // Use this for initialization
     void Start()
     {
         prevHorizontal = 0;
         prevVertical = 0;
-        prevPostition = Vector3.zero;
+        prevPosition = Vector3.zero;
         prevRotation = Vector3.zero;
+        initPosition = transform.position;
     }
 
     private void Update()
     {
         Vector3 playerPos = new Vector3(player.transform.position.x, 0, player.transform.position.z);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.identity, decay_step);
+
+        Vector3 targetPosition = Vector3.MoveTowards(transform.position, initPosition, Time.deltaTime * 2);
+        transform.position = targetPosition;
+
+        float angle = 0.0f;
+        Vector3 axis = Vector3.zero;
+        Quaternion targetRotation = Quaternion.RotateTowards(transform.rotation, Quaternion.identity, maxRot);
+        targetRotation.ToAngleAxis(out angle, out axis);
+        this.transform.RotateAround(playerPos, axis, -angle);
 
         /*
         // Resetting the previous rotation
@@ -58,7 +68,7 @@ public class WorldTilt : MonoBehaviour
             prevHorizontal = moveHorizontal;
             prevVertical = moveVertical;
             prevRotation = transform.rotation.eulerAngles;
-            prevPostition = playerPos;
+            prevPosition = playerPos;
         }
     }
 }
