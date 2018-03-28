@@ -4,7 +4,7 @@ using System.Collections;
 public class l5_spinplatform : MonoBehaviour
 {
 
-	private int foo;
+	public int speed;
 
 	//changes
 	void Start(){
@@ -12,6 +12,6 @@ public class l5_spinplatform : MonoBehaviour
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		transform.Rotate (new Vector3 (0, 30, 0) * Time.deltaTime);
+		transform.Rotate (new Vector3 (0, speed, 0) * Time.deltaTime);
 	}
 }
