@@ -10,7 +10,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="CameraController.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/CameraController.cs">
           <provider selected="true" editor-type-id="text-editor">
@@ -27,16 +27,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CameraController2.cs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/CameraController2.cs">
+      <file leaf-file-name="Rotater.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Rotater.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding>
-                <marker date="1521143286417" expanded="false" signature="6:78" ph="..." />
-                <marker date="1521143286417" expanded="true" signature="126:536" ph="{...}" />
-                <marker date="1521143286417" expanded="true" signature="220:331" ph="{...}" />
-                <marker date="1521143286417" expanded="true" signature="352:534" ph="{...}" />
+                <marker date="1516396199697" expanded="false" signature="6:44" ph="..." />
+                <marker date="1516396199697" expanded="true" signature="83:579" ph="{...}" />
+                <marker date="1516396199697" expanded="true" signature="124:149" ph="{...}" />
+                <marker date="1516396199697" expanded="true" signature="203:577" ph="{...}" />
+                <marker date="1516396199697" expanded="true" signature="509:574" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="l5_spinplatform.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/l5_spinplatform.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+              <folding>
+                <marker date="1522259643591" expanded="true" signature="6:44" ph="..." />
+                <marker date="1522259643591" expanded="true" signature="91:238" ph="{...}" />
+                <marker date="1522259643591" expanded="true" signature="107:111" ph="{...}" />
+                <marker date="1522259643591" expanded="true" signature="170:236" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -48,14 +64,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/l5_spinplatform.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Rotater.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraController2.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraController2.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/l5_spinplatform.cs" />
       </list>
     </option>
   </component>
@@ -136,11 +154,12 @@
       <updated>1519938167132</updated>
       <workItem from="1519938168202" duration="46000" />
       <workItem from="1521142874603" duration="414000" />
+      <workItem from="1522257959922" duration="826000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="460000" />
+    <option name="totallyTimeSpent" value="1286000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -153,6 +172,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="260" y="20" width="1400" height="1000" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -206,11 +226,55 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/CameraController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="20" column="86" lean-forward="false" selection-start-line="20" selection-start-column="86" selection-end-line="20" selection-end-column="86" />
           <folding>
-            <marker date="1521143286417" expanded="false" signature="6:78" ph="..." />
-            <marker date="1521143286417" expanded="true" signature="126:536" ph="{...}" />
-            <marker date="1521143286417" expanded="true" signature="220:331" ph="{...}" />
-            <marker date="1521143286417" expanded="true" signature="352:534" ph="{...}" />
+            <marker date="1521143200339" expanded="false" signature="6:44" ph="..." />
+            <marker date="1521143200339" expanded="true" signature="92:683" ph="{...}" />
+            <marker date="1521143200339" expanded="true" signature="211:270" ph="/* private Vector3 g_offset; ... */" />
+            <marker date="1521143200339" expanded="true" signature="286:414" ph="{...}" />
+            <marker date="1521143200339" expanded="true" signature="472:681" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/CameraController2.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Rotater.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <marker date="1516396199697" expanded="false" signature="6:44" ph="..." />
+            <marker date="1516396199697" expanded="true" signature="83:579" ph="{...}" />
+            <marker date="1516396199697" expanded="true" signature="124:149" ph="{...}" />
+            <marker date="1516396199697" expanded="true" signature="203:577" ph="{...}" />
+            <marker date="1516396199697" expanded="true" signature="509:574" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/l5_spinplatform.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+          <folding>
+            <marker date="1522259643591" expanded="true" signature="6:44" ph="..." />
+            <marker date="1522259643591" expanded="true" signature="91:238" ph="{...}" />
+            <marker date="1522259643591" expanded="true" signature="107:111" ph="{...}" />
+            <marker date="1522259643591" expanded="true" signature="170:236" ph="{...}" />
           </folding>
         </state>
       </provider>

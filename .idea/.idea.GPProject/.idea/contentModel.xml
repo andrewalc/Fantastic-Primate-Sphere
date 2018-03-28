@@ -15,8 +15,8 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="CameraController.cs" t="Include" />
-          <e p="CameraController2.cs" t="Include" />
           <e p="EnemyController.cs" t="Include" />
+          <e p="l5_spinplatform.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="Rotater.cs" t="Include" />
           <e p="WorldTilt.cs" t="Include" />
