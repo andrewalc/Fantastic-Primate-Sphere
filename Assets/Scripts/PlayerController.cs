@@ -5,22 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
     
-	public Text countText;
-	public Text winText;
-	public Text TimerText;
-	public Text loseText;
     public int timeForLevel;
     public string nextLevel;
-
 	public bool gameOver;
 
 	private Rigidbody rb;
 
 	private int count;
 	private int currTime;
+    private Text countText;
+    private Text winText;
+    private Text TimerText;
+    private Text loseText;
 
 
-	void Start(){
+    void Start(){
 		rb = GetComponent<Rigidbody> ();
 		gameOver = false; // Is the game over?
 		count = 0; // The number of pickups the player has
@@ -29,8 +28,13 @@ public class PlayerController : MonoBehaviour {
 		// Tick the timer every one second
 		InvokeRepeating ("TimerTick", 0.0f, 1.0f);
 
-		// Set up the UI text
-		SetCountText ();
+        // Set up the UI text
+        countText = GameObject.Find("/Canvas/CountText").GetComponent<Text>();
+        winText = GameObject.Find("/Canvas/WinText").GetComponent<Text>();
+        TimerText = GameObject.Find("/Canvas/TimerText").GetComponent<Text>();
+        loseText = GameObject.Find("/Canvas/LoseText").GetComponent<Text>();
+
+        SetCountText ();
 		SetTimerText ();
 		winText.text = "";
 		loseText.text = "";
