@@ -39,8 +39,8 @@ public class WorldTilt : MonoBehaviour
 
         /*
         // Resetting the previous rotation
-        this.transform.RotateAround(prevPostition, Vector3.right * -prevHorizontal, speed * Time.deltaTime);
-        this.transform.RotateAround(prevPostition, Vector3.forward * -prevVertical, speed * Time.deltaTime);
+        this.transform.RotateAround(prevPosition, Vector3.right * -prevHorizontal, speed * Time.deltaTime);
+        this.transform.RotateAround(prevPosition, Vector3.forward * -prevVertical, speed * Time.deltaTime);
         this.transform.RotateAround(playerPos, Vector3.right * prevHorizontal, speed * Time.deltaTime);
         this.transform.RotateAround(playerPos, Vector3.forward * prevVertical, speed * Time.deltaTime);
         */

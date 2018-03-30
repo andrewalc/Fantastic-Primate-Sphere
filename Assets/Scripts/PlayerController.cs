@@ -13,10 +13,12 @@ public class PlayerController : MonoBehaviour {
 
 	private int count;
 	private int currTime;
+	private int lifeCounter;
     private Text countText;
     private Text winText;
     private Text TimerText;
     private Text loseText;
+	private Text lifeText;
 
 
     void Start(){
@@ -33,6 +35,11 @@ public class PlayerController : MonoBehaviour {
         winText = GameObject.Find("/Canvas/WinText").GetComponent<Text>();
         TimerText = GameObject.Find("/Canvas/TimerText").GetComponent<Text>();
         loseText = GameObject.Find("/Canvas/LoseText").GetComponent<Text>();
+
+		// makes the ball lighter
+		rb.mass = .5f;
+		rb.drag = .5f;
+		rb.angularDrag = .3f;
 
         SetCountText ();
 		SetTimerText ();
@@ -58,6 +65,9 @@ public class PlayerController : MonoBehaviour {
                 SetTimerText();
             }
 		}
+		if (lifeCounter > 0) {
+			lifeCounter--;
+		}
 	}
 
 	// On collision with an Enemy or if the player runs out of time, the player loses
@@ -81,6 +91,9 @@ public class PlayerController : MonoBehaviour {
 			other.gameObject.SetActive (false);
 			count++;
 			SetCountText ();
+		}
+		if (count % 100 == 0) {
+			lifeCounter++;
 		}
 	}
 
