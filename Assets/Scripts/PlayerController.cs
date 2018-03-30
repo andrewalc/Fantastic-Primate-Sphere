@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour {
 		gameOver = false; // Is the game over?
 		count = 0; // The number of pickups the player has
         currTime = timeForLevel; // How much time per level there is
+        lifeCounter = 2;
 
 		// Tick the timer every one second
 		InvokeRepeating ("TimerTick", 0.0f, 1.0f);
@@ -64,18 +65,33 @@ public class PlayerController : MonoBehaviour {
                 currTime--;
                 SetTimerText();
             }
-		}
-		if (lifeCounter > 0) {
-			lifeCounter--;
+            else
+            {
+                if (lifeCounter >= 0)
+                {
+                    SceneManager.LoadScene("Scenes/" + SceneManager.GetActiveScene().name);
+                }
+                else
+                {
+                    loseText.text = "You lose!";
+                    gameOver = true;
+                }
+            }
 		}
 	}
 
-	// On collision with an Enemy or if the player runs out of time, the player loses
+	// On collision with an Enemy, the player loses, on collision with the goal, the player moves on to the next level
 	void OnCollisionEnter(Collision col) {
-		if (!gameOver && col.gameObject.tag == "Enemy" || currTime <= 0) {
-			loseText.text = "You lose!";
-			gameOver = true;
-            SceneManager.LoadScene("Scenes/" + "LevelOne");
+		if (!gameOver && col.gameObject.tag == "Enemy") {
+            if (lifeCounter >= 0)
+            {
+                SceneManager.LoadScene("Scenes/" + SceneManager.GetActiveScene().name);
+            }
+            else
+            {
+                loseText.text = "You lose!";
+                gameOver = true;
+            }
         }
         if (!gameOver && col.gameObject.tag == "Goal" && currTime > 0)
         {
@@ -99,7 +115,7 @@ public class PlayerController : MonoBehaviour {
 
 	// Set the count
 	void SetCountText(){
-		countText.text = "Count: " + count.ToString ();
+		countText.text = "Score: " + count.ToString ();
 		if (!gameOver && count >= 9) {
 			winText.text = "You Win!";
 			gameOver = true;
