@@ -20,5 +20,6 @@ public class CameraController : MonoBehaviour {
 		transform.position = player.transform.position + p_offset;
 		transform.position = transform.position + new Vector3 (0, vertical_offset, 0);
 		//transform.rotation = ground.transform.rotation + g_offset;
+		transform.Rotate(Vector3.forward * Time.deltaTime * 180);
 	}
 }
