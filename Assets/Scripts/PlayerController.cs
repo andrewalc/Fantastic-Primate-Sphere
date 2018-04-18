@@ -5,14 +5,19 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public int timeForLevel;
+
+    float minutes = 0;
+    float seconds = 30;
+    float miliseconds = 0;
+
     public string nextLevel;
     public bool gameOver;
     public bool gameStart;
+    public bool TimeOver;
 
     private Rigidbody rb;
 
-    private int count;
-    private int currTime;
+    private float count;
     private int lifeCounter;
     private Text countText;
     private Text winText;
@@ -23,19 +28,26 @@ public class PlayerController : MonoBehaviour
     private AudioSource[] sounds;
     private AudioSource beepSound;
     private AudioSource doubleBeepSound;
-    private int POINT_SECOND_MULTIPLIER = 100;
+    private Animation animation;
+    private float POINT_SECOND_MULTIPLIER = 100;
+    private float POINT_MILLISECOND_MULTIPLIER = 10;
+    private bool flyUp;
 
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         sounds = GetComponents<AudioSource>();
+        animation = GetComponent<Animation>();
+
         doubleBeepSound = sounds[0];
         beepSound = sounds[1];
-        gameStart = false;
+
+        gameStart = false; // Has the game started?
         gameOver = false; // Is the game over?
+        TimeOver = false; // Has time run out?
+
         count = 0; // The number of pickups the player has
-        currTime = timeForLevel; // How much time per level there is
         lifeCounter = 2;
 
         // Set up the UI text
@@ -51,6 +63,8 @@ public class PlayerController : MonoBehaviour
 
         SetCountText();
         SetTimerText();
+
+
         winText.text = "";
         loseText.text = "";
     }
@@ -63,34 +77,45 @@ public class PlayerController : MonoBehaviour
     //       Gizmos.DrawRay(transform.position, direction);
     //   }
     // Update is called once per frame
-    public void StartGame()
-    {
-        gameStart = true;
-        // Tick the timer every one second
-        InvokeRepeating("TimerTick", 0.0f, 1.0f);
-    }
 
-    // Tick the timer one second and update the timer text
-    void TimerTick()
+    private void Update()
     {
-        if (!gameOver)
+        if (flyUp)
         {
-            if (currTime >= 1)
+            rb.velocity += Vector3.up * 4;
+        }
+
+        if (gameStart && !gameOver)
+        {
+            if (miliseconds <= 0)
             {
-                if (currTime <= 10)
+                if (seconds <= 0)
                 {
-                    doubleBeepSound.Play();
-                    TimerText.color = Color.red;
+                    minutes--;
+                    seconds = 59;
                 }
-                else
+                else if (seconds >= 0)
                 {
+                    seconds--;
                     beepSound.Play();
+                    if (minutes == 0.0f && seconds <= 10.0f)
+                    {
+                        doubleBeepSound.Play();
+                        TimerText.color = Color.red;
+                    }
                 }
 
-                currTime--;
-                SetTimerText();
+                miliseconds = 100;
             }
-            else
+
+            if (minutes <= 0 && seconds <= 0 && miliseconds <= 0)
+            {
+                TimeOver = true;
+                gameOver = true;
+            }
+
+            miliseconds -= Time.deltaTime * 100;
+        }else if(TimeOver)
             {
                 if (lifeCounter >= 0)
                 {
@@ -99,36 +124,40 @@ public class PlayerController : MonoBehaviour
                 else
                 {
                     loseText.text = "You lose!";
-                    gameOver = true;
                 }
             }
-        }
+        
+        //Debug.Log(string.Format("{0}:{1}:{2}", minutes, seconds, (int)miliseconds));
+        SetTimerText();
+    }
+
+    public void StartGame()
+    {
+        gameStart = true;
+    }
+
+    public void StartFlyingUp()
+    {
+        flyUp = true;
     }
 
     // On collision with an Enemy, the player loses, on collision with the goal, the player moves on to the next level
     void OnCollisionEnter(Collision col)
     {
-        if (!gameOver && col.gameObject.tag == "Enemy")
-        {
-            if (lifeCounter >= 0)
-            {
-                SceneManager.LoadScene("Scenes/" + SceneManager.GetActiveScene().name);
-            }
-            else
-            {
-                loseText.text = "You lose!";
-                gameOver = true;
-            }
-        }
-
-        if (!gameOver && col.gameObject.tag == "Goal" && currTime > 0)
+        if (!gameOver && !TimeOver && col.gameObject.tag == "Goal")
         {
             winText.text = "You Win!";
             gameOver = true;
-            count += currTime * POINT_SECOND_MULTIPLIER;
+            count += seconds * POINT_SECOND_MULTIPLIER;
+            count += miliseconds * POINT_MILLISECOND_MULTIPLIER;
             GameObject.FindGameObjectWithTag("Goal").GetComponent<ParticleSystem>().Play();
-            SceneManager.LoadScene("Scenes/" + nextLevel);
+            GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>().Play("EndGoalCam");
         }
+    }
+
+    public void LoadNextLevel()
+    {
+        SceneManager.LoadScene("Scenes/" + nextLevel);
     }
 
     // On trigger with a pick up, increase the score and deactivate the pick up
@@ -161,6 +190,6 @@ public class PlayerController : MonoBehaviour
     // Set the timer
     void SetTimerText()
     {
-        TimerText.text = "~TIME~\n" + currTime.ToString();
+        TimerText.text = string.Format("~TIME~" + "\n" + "{1:00}:{2:00}", minutes, seconds, (int) miliseconds);
     }
 }

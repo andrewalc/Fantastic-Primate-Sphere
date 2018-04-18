@@ -50,17 +50,33 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        transform.position = player.transform.position + p_offset;
-        transform.position = transform.position + new Vector3(0, vertical_offset, 0);
-        //transform.rotation = ground.transform.rotation + g_offset;
+        if (player.GetComponent<PlayerController>().gameOver)
+        {
+            transform.LookAt(player.transform);
+        }
+        else
+        {
+            transform.position = player.transform.position + p_offset;
+            transform.position = transform.position + new Vector3(0, vertical_offset, 0);
+            //transform.rotation = ground.transform.rotation + g_offset;
+        }
     }
 
     void StartPlayerGame()
     {
         player.GetComponent<PlayerController>().StartGame();
     }
+
+    void LoadNextLevel()
+    {
+        player.GetComponent<PlayerController>().LoadNextLevel();
+    }
     
-    
+    void PlayerFlyUp()
+    {
+        player.GetComponent<PlayerController>().StartFlyingUp();
+    }
+
 
     private IEnumerator StageTextFadeOut()
     {
