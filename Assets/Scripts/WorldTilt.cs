@@ -6,6 +6,7 @@ public class WorldTilt : MonoBehaviour
 
     public float speed;
     public GameObject player;
+    public bool dud;
     private float prevHorizontal;
     private float prevVertical;
 
@@ -92,7 +93,7 @@ public class WorldTilt : MonoBehaviour
 
         float moveHorizontal;
         float moveVertical;
-        if (player.GetComponent<PlayerController>().gameStart && !player.GetComponent<PlayerController>().gameOver)
+        if (dud || (player.GetComponent<PlayerController>().gameStart && !player.GetComponent<PlayerController>().gameOver))
         {
             // Get horizontal and vertical forces from Input
             moveHorizontal = Input.GetAxis("Horizontal");

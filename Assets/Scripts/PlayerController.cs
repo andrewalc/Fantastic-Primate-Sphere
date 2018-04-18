@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     private AudioSource[] sounds;
     private AudioSource beepSound;
     private AudioSource doubleBeepSound;
+    private int POINT_SECOND_MULTIPLIER = 100;
 
 
     void Start()
@@ -124,6 +125,7 @@ public class PlayerController : MonoBehaviour
         {
             winText.text = "You Win!";
             gameOver = true;
+            count += currTime * POINT_SECOND_MULTIPLIER;
             GameObject.FindGameObjectWithTag("Goal").GetComponent<ParticleSystem>().Play();
             SceneManager.LoadScene("Scenes/" + nextLevel);
         }
