@@ -26,7 +26,7 @@ public class WorldTilt : MonoBehaviour
 
     private void Update()
     {
-        Vector3 playerPos = new Vector3(player.transform.position.x, 0, player.transform.position.z);
+        /*Vector3 playerPos = new Vector3(player.transform.position.x, 0, player.transform.position.z);
 
         Vector3 targetPosition = Vector3.MoveTowards(transform.position, initPosition, Time.deltaTime * 2);
         transform.position = targetPosition;
@@ -36,14 +36,51 @@ public class WorldTilt : MonoBehaviour
         Quaternion targetRotation = Quaternion.RotateTowards(transform.rotation, Quaternion.identity, maxRot);
         targetRotation.ToAngleAxis(out angle, out axis);
         this.transform.RotateAround(playerPos, axis, -angle);
-
-        /*
-        // Resetting the previous rotation
-        this.transform.RotateAround(prevPosition, Vector3.right * -prevHorizontal, speed * Time.deltaTime);
-        this.transform.RotateAround(prevPosition, Vector3.forward * -prevVertical, speed * Time.deltaTime);
-        this.transform.RotateAround(playerPos, Vector3.right * prevHorizontal, speed * Time.deltaTime);
-        this.transform.RotateAround(playerPos, Vector3.forward * prevVertical, speed * Time.deltaTime);
         */
+
+	
+        Vector3 playerPos = new Vector3 (player.transform.position.x, 0, player.transform.position.z);
+		float moveHorizontal;
+		float moveVertical;
+        if (!player.GetComponent<PlayerController>().gameOver)
+        {
+            if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0 && (prevHorizontal != 0 || prevVertical != 0))
+            {
+                print(prevHorizontal + ", " + prevVertical);
+                moveHorizontal = prevHorizontal;
+                moveVertical = prevVertical;
+                this.transform.RotateAround(player.transform.position, Vector3.left, speed * moveHorizontal * Time.deltaTime);
+                this.transform.RotateAround(player.transform.position, Vector3.back, speed * moveVertical * Time.deltaTime);
+                print(moveHorizontal + ", " + moveVertical);
+            }
+            else
+            {
+                // Get horizontal and vertical forces from Input
+                moveHorizontal = Input.GetAxis("Horizontal");
+                moveVertical = Input.GetAxis("Vertical");
+
+                //this.transform.RotateAround(player.transform.position, player.transform.right, speed * moveHorizontal * Time.deltaTime);
+                //this.transform.RotateAround(player.transform.position, player.transform.forward, speed * moveVertical * Time.deltaTime);
+
+                this.transform.RotateAround(player.transform.position, Vector3.right, speed * moveHorizontal * Time.deltaTime);
+                this.transform.RotateAround(player.transform.position, Vector3.forward, speed * moveVertical * Time.deltaTime);
+
+
+            }
+
+
+
+            // The final movement vector before applying it to the player
+            //Vector3 movement = new Vector3 (moveHorizontal, 0, moveVertical) * speed * Time.deltaTime;
+            //this.transform.Rotate(speed * moveHorizontal * Time.deltaTime, 0, speed * moveVertical *  Time.deltaTime, Space.Self);
+            //this.transform.localRotation = new Quaternion (speed * moveHorizontal * Time.deltaTime, 0, speed * moveVertical *  Time.deltaTime , 1);
+
+
+            prevHorizontal = Mathf.Abs(moveHorizontal);
+            prevVertical = Mathf.Abs(moveVertical);
+            // Allow movement as long as the game isn't over
+            //this.transform.Rotate (movement);
+        }
     }
 
 
