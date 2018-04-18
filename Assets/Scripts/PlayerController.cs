@@ -124,6 +124,7 @@ public class PlayerController : MonoBehaviour
         {
             winText.text = "You Win!";
             gameOver = true;
+            GameObject.FindGameObjectWithTag("Goal").GetComponent<ParticleSystem>().Play();
             SceneManager.LoadScene("Scenes/" + nextLevel);
         }
     }
