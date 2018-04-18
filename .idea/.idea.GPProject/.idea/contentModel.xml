@@ -23,6 +23,7 @@
             <e p="l6_platform_l.cs" t="Include" />
             <e p="l6_platform_r.cs" t="Include" />
           </e>
+          <e p="LoadScene.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="Rotater.cs" t="Include" />
           <e p="WorldTilt.cs" t="Include" />
