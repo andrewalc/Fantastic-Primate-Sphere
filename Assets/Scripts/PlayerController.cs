@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public int timeForLevel;
     public string nextLevel;
     public bool gameOver;
+    public bool gameStart;
 
     private Rigidbody rb;
 
@@ -29,8 +30,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         sounds = GetComponents<AudioSource>();
         doubleBeepSound = sounds[0];
-        beepSound= sounds[1];
-        
+        beepSound = sounds[1];
+        gameStart = false;
         gameOver = false; // Is the game over?
         count = 0; // The number of pickups the player has
         currTime = timeForLevel; // How much time per level there is
@@ -61,8 +62,9 @@ public class PlayerController : MonoBehaviour
     //       Gizmos.DrawRay(transform.position, direction);
     //   }
     // Update is called once per frame
-    public void StartTimer()
+    public void StartGame()
     {
+        gameStart = true;
         // Tick the timer every one second
         InvokeRepeating("TimerTick", 0.0f, 1.0f);
     }
@@ -83,6 +85,7 @@ public class PlayerController : MonoBehaviour
                 {
                     beepSound.Play();
                 }
+
                 currTime--;
                 SetTimerText();
             }
@@ -155,6 +158,6 @@ public class PlayerController : MonoBehaviour
     // Set the timer
     void SetTimerText()
     {
-        TimerText.text = "~TIME~ \n" + currTime.ToString();
+        TimerText.text = "~TIME~\n" + currTime.ToString();
     }
 }

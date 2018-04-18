@@ -55,10 +55,12 @@ public class CameraController : MonoBehaviour
         //transform.rotation = ground.transform.rotation + g_offset;
     }
 
-    void StartPlayerTimer()
+    void StartPlayerGame()
     {
-        player.GetComponent<PlayerController>().StartTimer();
+        player.GetComponent<PlayerController>().StartGame();
     }
+    
+    
 
     private IEnumerator StageTextFadeOut()
     {
