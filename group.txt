@@ -1,7 +1,2 @@
-BANANA5
--------
-Andrew Alcala
-Roger Chen
-Ray Namar
-Ryan Teng
-Leslie Xie
+Group Name: Banana5
+Group Members: Andrew Alcala, Roger Chen, Raymond Namar, Ryan Teng, Leslie Xie

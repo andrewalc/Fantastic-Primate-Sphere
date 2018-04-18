@@ -1,15 +1,12 @@
-The most pressing question we wanted answered was: "Does this game feel like Monkey Ball," and I think the general consensus was that it didn't. 
-We need to fix our scripts to make the ball accelerate/stop faster, and to make the camera more precise.
+Playtesting Notes:
 
-Our game worked through and through, although again, it didn't feel like Monkey Ball all to much. 
-Every feature we wanted to implement for this playtest worked, and worked well.
+The game is definitely meant to be played on a controller, as our playtesters this time have stated a large amount of grief playing on a keyboard. It was recommended to us that we should invoke the inputmanager in order to fix this issue. After conversing with our team, we have decided that a keyboard would not be sufficient enough to track the inputs necessary for our game, and will always enforce the game being played with a controller.
 
-Again, we need to fix the "feel" of the game, which is just minor camera tweaks, as well as some tweaks to physics. 
-Some users said the game controls were a little unintuitive, as they wanted to use the right thumb stick to move the camera. 
-Because we want this to be a good Monkey Ball recreation, we're going to try and implement Monkey Ball's camera before anything else.
+Otherwise, people said our game was very intuitive, but that the UI did not pop out at them. We were having some bugs which got solved in the middle of class, but even afterwards, people did not pay attention to the score or timer counters, so we decided just to make them larger and more brightly colored. We believe the final product is something which pops out to players, even those who aren't paying attention to the time or score counters.
 
+We did a couple of physics changes as players requested from our previous playtest. We added drag to the ball, as well as fixed the stage tilting too far in either direction. This inadvertanly solved some camera clipping issues we were having, but is a little buggy as it now stands. Players noticed the ball popping from location to location when the let go of the input, and we believe this is because our new script moves the stage along with the ball, and sometimes the stage will come to abrupt stops or even move faster than the ball does. We will fix this for our next iteration. 
 
-We heard a lot of feedback about level ideas and we're very excited to try them out.
+Other important feedback:
+Change the levels so that the goal is easily visible from the get go. That or add some kind of mechanism which will allow the player to see where the goal is when the start the level. Currently, our patch for this is just to edit the levels so that the goal is obvious from the start. We are planning on trying to implement a cutscene or editing the transform of the camera that will show the player the entire stage before they start playing.
 
-
-Again, the camera and the physics need to be tweaked.
+We got comments that level 3 was easier to complete than level 2. This suggests that we should either order our levels in a fashion of increasing difficulty, or that we should change the design of level 3 so that it is more difficult. 

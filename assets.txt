@@ -5,4 +5,7 @@ We made:
 WorldTilt
 CameraController
 PlayerController
+l5_spinplatform
+l6_platform_l
+l6_platform_r
 All art assets are also made by the team.
