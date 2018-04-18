@@ -18,7 +18,6 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
 
     private float count;
-    private int lifeCounter;
     private Text countText;
     private Text winText;
     private Text TimerText;
@@ -29,8 +28,9 @@ public class PlayerController : MonoBehaviour
     private AudioSource beepSound;
     private AudioSource doubleBeepSound;
     private Animation animation;
+    private float POINT_PICKUP = 100;
     private float POINT_SECOND_MULTIPLIER = 100;
-    private float POINT_MILLISECOND_MULTIPLIER = 10;
+    private float POINT_MILLISECOND_MULTIPLIER = 1;
     private bool flyUp;
 
 
@@ -48,7 +48,6 @@ public class PlayerController : MonoBehaviour
         TimeOver = false; // Has time run out?
 
         count = 0; // The number of pickups the player has
-        lifeCounter = 2;
 
         // Set up the UI text
         countText = GameObject.Find("/Canvas/CountText").GetComponent<Text>();
@@ -85,7 +84,7 @@ public class PlayerController : MonoBehaviour
             rb.velocity += Vector3.up * 4;
         }
 
-        if (gameStart && !gameOver)
+        if (gameStart && !TimeOver && !gameOver)
         {
             if (miliseconds <= 0)
             {
@@ -103,30 +102,26 @@ public class PlayerController : MonoBehaviour
                         doubleBeepSound.Play();
                         TimerText.color = Color.red;
                     }
+
+                    if (minutes <= 0.0f && seconds <= 0.0f && miliseconds <= 0.0f)
+                    {
+                        TimeOver = true;
+                        print("TIME");
+                    }
                 }
 
                 miliseconds = 100;
             }
 
-            if (minutes <= 0 && seconds <= 0 && miliseconds <= 0)
-            {
-                TimeOver = true;
-                gameOver = true;
-            }
-
             miliseconds -= Time.deltaTime * 100;
-        }else if(TimeOver)
-            {
-                if (lifeCounter >= 0)
-                {
-                    SceneManager.LoadScene("Scenes/" + SceneManager.GetActiveScene().name);
-                }
-                else
-                {
-                    loseText.text = "You lose!";
-                }
-            }
-        
+        }
+        else if (TimeOver)
+        {
+            loseText.text = "You lose!";
+            gameOver = true;
+            SceneManager.LoadScene("Scenes/" + SceneManager.GetActiveScene().name);
+        }
+
         //Debug.Log(string.Format("{0}:{1}:{2}", minutes, seconds, (int)miliseconds));
         SetTimerText();
     }
@@ -139,17 +134,25 @@ public class PlayerController : MonoBehaviour
     public void StartFlyingUp()
     {
         flyUp = true;
+        GetComponent<ParticleSystem>().Play();
     }
 
     // On collision with an Enemy, the player loses, on collision with the goal, the player moves on to the next level
     void OnCollisionEnter(Collision col)
     {
+        if (!gameOver && col.gameObject.tag == "Enemy")
+        {
+            SceneManager.LoadScene("Scenes/" + SceneManager.GetActiveScene().name);
+        }
+
         if (!gameOver && !TimeOver && col.gameObject.tag == "Goal")
         {
+            SetTimerText();
+            count += (int) seconds * POINT_SECOND_MULTIPLIER;
+            count += (int) miliseconds * POINT_MILLISECOND_MULTIPLIER;
+            SetCountText();
             winText.text = "You Win!";
             gameOver = true;
-            count += seconds * POINT_SECOND_MULTIPLIER;
-            count += miliseconds * POINT_MILLISECOND_MULTIPLIER;
             GameObject.FindGameObjectWithTag("Goal").GetComponent<ParticleSystem>().Play();
             GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>().Play("EndGoalCam");
         }
@@ -166,13 +169,8 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Pick Up"))
         {
             other.gameObject.SetActive(false);
-            count++;
+            count += POINT_PICKUP;
             SetCountText();
-        }
-
-        if (count % 100 == 0)
-        {
-            lifeCounter++;
         }
     }
 
@@ -180,11 +178,6 @@ public class PlayerController : MonoBehaviour
     void SetCountText()
     {
         countText.text = "Score: " + count.ToString();
-        if (!gameOver && count >= 9)
-        {
-            winText.text = "You Win!";
-            gameOver = true;
-        }
     }
 
     // Set the timer
