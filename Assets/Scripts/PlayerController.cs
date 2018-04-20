@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public int timeForLevel;
 
-    float timer = 3;
+    float timer = 30;
     float gameRestartTimer = 3;
 
     public string nextLevel;
