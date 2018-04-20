@@ -6,23 +6,21 @@ public class PlayerController : MonoBehaviour
 {
     public int timeForLevel;
 
-    float minutes = 0;
-    float seconds = 3;
-    float miliseconds = 0;
+    float timer = 3;
+    float gameRestartTimer = 3;
 
     public string nextLevel;
     public bool gameOver;
+    public bool gameWin;
     public bool gameStart;
-    public bool TimeOver;
 
     private Rigidbody rb;
 
-    private float count;
+    private float count; // score
     private Text countText;
     private Text winText;
     private Text TimerText;
     private Text loseText;
-    private Text lifeText;
 
     private AudioSource[] sounds;
     private AudioSource beepSound;
@@ -30,7 +28,6 @@ public class PlayerController : MonoBehaviour
     private Animation animation;
     private float POINT_PICKUP = 100;
     private float POINT_SECOND_MULTIPLIER = 100;
-    private float POINT_MILLISECOND_MULTIPLIER = 1;
     private bool flyUp;
 
 
@@ -45,7 +42,7 @@ public class PlayerController : MonoBehaviour
 
         gameStart = false; // Has the game started?
         gameOver = false; // Is the game over?
-        TimeOver = false; // Has time run out?
+        gameWin = false; // Is the game won?
 
         count = 0; // The number of pickups the player has
 
@@ -60,69 +57,45 @@ public class PlayerController : MonoBehaviour
         rb.drag = .5f;
         rb.angularDrag = .3f;
 
-        SetCountText();
-        SetTimerText();
-
-
-        winText.text = "";
-        loseText.text = "";
+        SetStartingText();
     }
 
-    // shows "forward"
-//    void OnDrawGizmosSelected()
-//    {
-//        Gizmos.color = Color.red;
-//        Vector3 direction = transform.TransformDirection(rb.velocity) * 5;
-    //       Gizmos.DrawRay(transform.position, direction);
-    //   }
     // Update is called once per frame
 
-    private void FixedUpdate()
+    private void Update()
     {
+        // The player/game wants to restart the level
+        if (Input.GetKeyDown("r") || gameRestartTimer <= 0)
+        {
+            SceneManager.LoadScene("Scenes/" + SceneManager.GetActiveScene().name);
+        }
+
+        // The game has started and not yet ended
+        if (gameStart && !gameOver)
+        {
+            UpdateTime();
+        }
+        // The game has ended
+        else if (gameStart)
+        {
+            // The player won
+            if (gameWin)
+            {
+                winText.text = "You Win!";
+            }
+            // The player lost
+            else
+            {
+                loseText.text = "You lose!" + "\n" + "Press R to restart or wait 3 seconds!";
+                gameRestartTimer -= Time.deltaTime;
+            }
+        }
+
+        // Flying up animation when the goal is hit
         if (flyUp)
         {
             rb.velocity += Vector3.up * 4;
         }
-        print(seconds + " " + miliseconds);
-
-        if (gameStart && !TimeOver && !gameOver)
-        {
-            if (miliseconds <= 0)
-            {
-                if (seconds <= 0)
-                {
-                    minutes--;
-                    seconds = 59;
-                }
-                else if (seconds >= 0)
-                {
-                    seconds--;
-                    beepSound.Play();
-                    if (minutes == 0.0f && seconds <= 10.0f)
-                    {
-                        doubleBeepSound.Play();
-                        TimerText.color = Color.red;
-                    }
-                }
-                if (minutes <= 0.0f && seconds <= 0.0f && miliseconds <= 0.0f)
-                {
-                    TimeOver = true;
-                    print("TIME " + seconds + " " + miliseconds);
-                }
-                miliseconds = 100;
-            }
-
-            miliseconds -= Time.deltaTime * 100;
-        }
-        else if (TimeOver)
-        {
-            loseText.text = "You lose!";
-            gameOver = true;
-            SceneManager.LoadScene("Scenes/" + SceneManager.GetActiveScene().name);
-        }
-
-        //Debug.Log(string.Format("{0}:{1}:{2}", minutes, seconds, (int)miliseconds));
-        SetTimerText();
     }
 
     public void StartGame()
@@ -130,6 +103,7 @@ public class PlayerController : MonoBehaviour
         gameStart = true;
     }
 
+    // This is for the flying up after hitting a goal
     public void StartFlyingUp()
     {
         flyUp = true;
@@ -139,19 +113,23 @@ public class PlayerController : MonoBehaviour
     // On collision with an Enemy, the player loses, on collision with the goal, the player moves on to the next level
     void OnCollisionEnter(Collision col)
     {
+        // Hit a killplane
         if (!gameOver && col.gameObject.tag == "Enemy")
         {
-            SceneManager.LoadScene("Scenes/" + SceneManager.GetActiveScene().name);
+            gameOver = true;
         }
 
-        if (!gameOver && !TimeOver && col.gameObject.tag == "Goal")
+        // Hit the goal
+        if (!gameOver && col.gameObject.tag == "Goal")
         {
+            // Lock the time
             SetTimerText();
-            count += (int) seconds * POINT_SECOND_MULTIPLIER;
-            count += (int) miliseconds * POINT_MILLISECOND_MULTIPLIER;
+            // Add and lock the score
+            count += (int) (timer * POINT_SECOND_MULTIPLIER);
             SetCountText();
-            winText.text = "You Win!";
+            // End the game with a win
             gameOver = true;
+            gameWin = true;
             GameObject.FindGameObjectWithTag("Goal").GetComponent<ParticleSystem>().Play();
             GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>().Play("EndGoalCam");
         }
@@ -173,6 +151,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void SetStartingText()
+    {
+        SetCountText();
+        SetTimerText();
+        winText.text = "";
+        loseText.text = "";
+    }
+
     // Set the count
     void SetCountText()
     {
@@ -182,6 +168,38 @@ public class PlayerController : MonoBehaviour
     // Set the timer
     void SetTimerText()
     {
-        TimerText.text = string.Format("~TIME~" + "\n" + "{1:00}:{2:00}", minutes, seconds, (int) miliseconds);
+        float seconds = Mathf.Floor(timer);
+        float milliseconds = (timer * 100) % 100;
+        TimerText.text = string.Format("~TIME~" + "\n" + "{0}:{1:D2}", (int) seconds, (int) milliseconds);
+    }
+
+    void UpdateTime()
+    {
+        var nearestSecond = Mathf.Floor(timer);
+
+        timer -= Time.deltaTime;
+        var seconds = Mathf.Floor(timer);
+
+        // if the second changed
+        if (seconds < nearestSecond)
+        {
+            beepSound.Play();
+
+            // if we're also low on time
+            if (seconds <= 10)
+            {
+                doubleBeepSound.Play();
+                TimerText.color = Color.red;
+            }
+        }
+
+        // if lost
+        if (timer <= 0.0f)
+        {
+            timer = 0.0f;
+            gameOver = true;
+        }
+
+        SetTimerText();
     }
 }
