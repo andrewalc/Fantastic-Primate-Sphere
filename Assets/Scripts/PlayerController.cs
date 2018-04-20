@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public int timeForLevel;
 
     float minutes = 0;
-    float seconds = 30;
+    float seconds = 3;
     float miliseconds = 0;
 
     public string nextLevel;
@@ -77,12 +77,13 @@ public class PlayerController : MonoBehaviour
     //   }
     // Update is called once per frame
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (flyUp)
         {
             rb.velocity += Vector3.up * 4;
         }
+        print(seconds + " " + miliseconds);
 
         if (gameStart && !TimeOver && !gameOver)
         {
@@ -102,14 +103,12 @@ public class PlayerController : MonoBehaviour
                         doubleBeepSound.Play();
                         TimerText.color = Color.red;
                     }
-
-                    if (minutes <= 0.0f && seconds <= 0.0f && miliseconds <= 0.0f)
-                    {
-                        TimeOver = true;
-                        print("TIME");
-                    }
                 }
-
+                if (minutes <= 0.0f && seconds <= 0.0f && miliseconds <= 0.0f)
+                {
+                    TimeOver = true;
+                    print("TIME " + seconds + " " + miliseconds);
+                }
                 miliseconds = 100;
             }
 
