@@ -27,6 +27,6 @@ public class LoadScene : MonoBehaviour
     void NextScene()
     {
         GameObject.FindGameObjectWithTag("Music").GetComponent<MusicClass>().PlayMusic();
-        SceneManager.LoadScene(nextScene.name);
+        SceneManager.LoadScene(1);
     }
 }
