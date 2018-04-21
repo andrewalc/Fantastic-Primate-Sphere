@@ -1,6 +1,11 @@
-We did not pull any assets off the Unity asset store.
+We made all of the assets in the game with a couple exceptions:
+- the font of the UI text
+- the texture/material of the ball
+- the skybox
+
+Although our game was initially based off of the Roll-a-Ball tutorial, most of the code has evolved and changed to fit our needs. 
 Our game is based off the Roll-a-Ball tutorial for Unity which we did earlier this semester, although most of our code has changed for this project.
-All of our scripts were made by us, though they were influenced a little bit by the Roll-a-Ball tutorial.
+All of our scripts were made by us, though some of the basic properties of picking up items and general level layout were based on the Roll-a-Ball tutorial.
 We made:
 WorldTilt
 CameraController
@@ -8,4 +13,4 @@ PlayerController
 l5_spinplatform
 l6_platform_l
 l6_platform_r
-All art assets are also made by the team.
+All blendr and art assets (with the exception of the font, ball material, and skybox) were made by Banana5.

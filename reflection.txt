@@ -1,0 +1,5 @@
+Overall, we achieved most everything we wanted to accomplish with this game. Althought there are a couple smaller things we couldn't a) get to, or b) get to work, we are very happy with how our process went. We made sure to keep our goals realistic and attainable early on, and that paid off dividends when we reached the end of the development process.
+
+In the end, our game ended up being basically exactly what we envisioned. The game is responsive, looks really nice, and does all of the important things we wanted it to do early on. 
+
+Playtesting was really helpful, because it caught a couple of subtleties that we otherwise may not have realized until later (e.g. planes are only visible from one side, and 3d shapes are visible from all sides; the ball felt very heavy and not as responsive as it should be early on). It was also great to see people figure out all of the levels we had designed. Some levels we thought were easy ended up being nearly impossible for other players, and it gave us a better sense of overall balance that our game really needed.

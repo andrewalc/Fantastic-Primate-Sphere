@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         // The player/game wants to restart the level
-        if (Input.GetKeyDown("r") || gameRestartTimer <= 0)
+        if (Input.GetKeyDown("joystick 1 button " + 7) || Input.GetKeyDown("r") || gameRestartTimer <= 0)
         {
             SceneManager.LoadScene("Scenes/" + SceneManager.GetActiveScene().name);
         }
@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
             // The player lost
             else
             {
-                loseText.text = "You lose!" + "\n" + "Press R to restart or wait 3 seconds!";
+                loseText.text = "You lose!" + "\n" + "Press start or R to restart or wait 3 seconds!";
                 gameRestartTimer -= Time.deltaTime;
             }
         }
@@ -137,7 +137,13 @@ public class PlayerController : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        SceneManager.LoadScene("Scenes/" + nextLevel);
+        //SceneManager.LoadScene("Scenes/" + nextLevel); Can use later
+        if (SceneManager.GetActiveScene().buildIndex == SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene("Scenes/" + "Menu");
+        }
+        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     // On trigger with a pick up, increase the score and deactivate the pick up

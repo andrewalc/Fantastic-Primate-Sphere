@@ -43,6 +43,5 @@ public class l6_platform_r : MonoBehaviour
             transform.Translate(0, 0, -speed);
         }
 
-        print(transform.position);
     }
 }

@@ -1,4 +1,4 @@
-﻿Checkpoint 1:
+?Checkpoint 1:
 
 X (M) ability to move ball by tilting map
 
@@ -18,33 +18,33 @@ X (S) next 4 levels
 Checkpoint 2:
 
 
-- (M) resetting platform to a neutral state
+X (M) resetting platform to a neutral state
 
-- (M) cap on how far the platforms can tilt
+X (M) cap on how far the platforms can tilt
 
-- (M) level restart on death
+X (M) level restart on death
 
-- (M) game over screen / life tracker
+-  (M) game over screen / life tracker
 
-- (S) make the platforms thicker (planes -> rectangles)
+X (S) make the platforms thicker (planes -> rectangles)
 
-- (S) level victory screen (replay / next)
+X (S) level victory screen (replay / next)
 
 - (S) camera rotates with the ball
 
-- (C) accelerate / stop ball faster
+X (C) accelerate / stop ball faster
 
-- (C) bigger timer
+X (C) bigger timer
 
 
 
 Final:
 
-- (S) Advanced lighting (and other Special Effects)
+X (S) Advanced lighting (and other Special Effects)
 
-- (S) UI and menuing
+X (S) UI and menuing
 
-- (C) more levels
+X (C) more levels
 
 - (C) Minigames
 
