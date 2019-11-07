@@ -138,7 +138,7 @@ public class PlayerController : MonoBehaviour
     public void LoadNextLevel()
     {
         //SceneManager.LoadScene("Scenes/" + nextLevel); Can use later
-        if (SceneManager.GetActiveScene().buildIndex == SceneManager.sceneCountInBuildSettings)
+        if (SceneManager.GetActiveScene().buildIndex == SceneManager.sceneCountInBuildSettings - 1)
         {
             SceneManager.LoadScene("Scenes/" + "Menu");
         }
