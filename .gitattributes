@@ -1,8 +1,8 @@
-*.shader linguist-vendored=false
+
 # Unity
 *.cginc              text
 *.cs                 text diff=csharp
-*.shader             text
+*.shader             text linguist-vendored=false
 
 # Unity YAML
 *.mat                merge=unityyamlmerge eol=lf
