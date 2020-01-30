@@ -36,3 +36,4 @@ sysinfo.txt
 *.unitypackage
 
 ProjectSettings/ProjectVersion\.txt
+.DS_Store
