@@ -1,4 +1,4 @@
-*.shader linguist-vendored
+*.shader linguist-vendored=false
 # Unity
 *.cginc              text
 *.cs                 text diff=csharp
