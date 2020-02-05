@@ -1,0 +1,93 @@
+.no-padding {
+    padding: 0 !important;
+}
+
+a.wbdv-close:link {
+    color: #99aab5;
+    text-decoration: none;
+}
+
+a.wbdv-close:visited {
+    color: #99aab5;
+    text-decoration: none;
+}
+
+a.wbdv-close:hover {
+    color: #ffffff;
+    background-color: #23272a;
+    text-decoration: none;
+}
+
+div.wbdv-course-editor {
+    padding-top: 0.4%;
+}
+
+.wbdv-course-title {
+    font-weight: bold;
+    color: #99aab5;
+}
+
+a.wbdv-page-tab:link {
+    background-color: #23272a;
+    color: white;
+    text-decoration: none;
+}
+
+a.wbdv-page-tab:hover {
+    background-color: #99aab5;
+    text-decoration: none;
+}
+
+a.wbdv-new-page-btn {
+    background-color: #23272a;
+}
+
+a.wbdv-module-item-title {
+    width: 80%;
+    float: left;
+    text-align: center;
+}
+
+a.wbdv-module-item-title:hover {
+    width: 80%;
+    float: left;
+    text-align: center;
+    background-color: #99aab5;
+}
+
+a.wbdv-module-item-delete-btn {
+    width: 20%;
+    float: left;
+    text-align: center;
+}
+
+a.wbdv-module-item-add-btn {
+    width: 100%;
+    float: left;
+    text-align: center;
+}
+
+a.wbdv-topic-pill:hover {
+    background-color: #23272a;
+    color: white;
+}
+
+a.wbdv-topic-add-btn:hover {
+    background-color: white;
+    color: #23272a;
+}
+
+ul.wbdv-module-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #23272a;
+}
+
+
+body {
+    font-family: "Tahoma", Times, serif;
+    background-color: white;
+    color: black;
+}

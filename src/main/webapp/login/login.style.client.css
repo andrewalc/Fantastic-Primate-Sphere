@@ -1,0 +1,18 @@
+.no-padding {
+    padding: 0 !important;
+}
+
+.wbdv-forgot-password:hover {
+    background-color: white;
+    color: #23272a;
+}
+
+.wbdv-register:hover {
+    background-color: white;
+    color: #23272a;
+}
+
+.wbdv-cancel:hover {
+    background-color: white;
+    color: #23272a;
+}

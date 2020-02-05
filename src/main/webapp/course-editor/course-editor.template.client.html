@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"
+          name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <title>Course Editor</title>
+
+    <! BOOTSTRAP >
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../css/styles.css" rel="stylesheet"/>
+    <link href="course-editor.style.client.css" rel="stylesheet"/>
+
+    <! FONTAWESOME >
+    <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="container-fluid no-padding">
+    <h1>
+        <div class="row">
+            <div class="col-md-4 wbdv-course-editor">
+                <a href="../" class="wbdv-close">
+                    <i class="fas fa-times"></i>
+                </a>
+                <span class="wbdv-course-title">
+                    Course Title
+                </span>
+            </div>
+            <div class="col-md-7">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link wbdv-page-tab" href="#">
+                            Page 1
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link wbdv-page-tab" href="#">
+                            Page 2
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link wbdv-page-tab" href="#">
+                            Page 3
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-1">
+                <a class="wbdv-new-page-btn" href="#">
+                    <i class="fas fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </h1>
+
+    <div class="row">
+        <div class="col-4">
+            <div>
+                <ul class="nav flex-column nav-pills wbdv-module-list">
+                    <li class="wbdv-module-item">
+                        <a class="nav-link wbdv-module-item-title" href="#">Module 1</a>
+                        <a href="#" class="wbdv-module-item-delete-btn">
+                            <i class="fas fa-times"></i>
+                        </a>
+                    </li>
+                    <li class="wbdv-module-item">
+                        <a class="nav-link wbdv-module-item-title" href="#">Module 2</a>
+                        <a href="#" class="wbdv-module-item-delete-btn">
+                            <i class="fas fa-times"></i>
+                        </a>
+                    </li>
+                    <li class="wbdv-module-item">
+                        <a class="nav-link wbdv-module-item-title" href="#">Module 3</a>
+                        <a href="#" class="wbdv-module-item-delete-btn">
+                            <i class="fas fa-times"></i>
+                        </a>
+                    </li>
+                    <li class="wbdv-module-item">
+                        <a href="#" class="wbdv-module-item-add-btn">
+                            <i class="fas fa-plus"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-8">
+            <ul class="nav nav-pills wbdv-topic-pill-list">
+                <li class="nav-item wbdv-topic-pill">
+                    <a class="nav-link" href="#">Topic 1</a>
+                </li>
+                <li class="nav-item wbdv-topic-pil">
+                    <a class="nav-link" href="#">Topic 2</a>
+                </li>
+                <li class="nav-item wbdv-topic-pil">
+                    <a class="nav-link" href="#">Topic 3</a>
+                </li>
+                <li>
+                    <a href="#" class="wbdv-topic-add-btn">
+                        <i class="fas fa-plus"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+</div>
+</body>
+</html>

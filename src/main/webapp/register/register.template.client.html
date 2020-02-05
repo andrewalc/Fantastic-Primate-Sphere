@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"
+          name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <title>Course Editor</title>
+
+    <! BOOTSTRAP >
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../css/styles.css" rel="stylesheet"/>
+    <link href="register.style.client.css" rel="stylesheet"/>
+
+    <! FONTAWESOME >
+    <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="container">
+    <h1>Register</h1>
+    <form action="../profile/profile.template.client.html">
+        <div class="form-group row">
+            <label for="username" class="col-sm-2 col-form-label">
+                Username </label>
+            <div class="col-sm-10">
+                <input class="form-control wbdv-field wbdv-username"
+                       id="username"
+                       placeholder="Username">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="password" class="col-sm-2 col-form-label">
+                Password </label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control wbdv-field wbdv-password"
+                       id="password" placeholder="Password">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="confirm-password" class="col-sm-2 col-form-label">
+                Confirm Password </label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control wbdv-field wbdv-password-verify"
+                       id="confirm-password" placeholder="Confirm Password">
+            </div>
+            <button class="btn btn-primary btn-block wbdv-button wbdv-register" type="submit">Register</button>
+            <div class="row">
+                <div class="col-4">
+                    <a href="../login/login.template.client.html" class="wbdv-link wbdv-login">Login</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</body>

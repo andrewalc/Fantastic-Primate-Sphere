@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"
+          name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <title>Course Editor</title>
+
+    <! BOOTSTRAP >
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../css/styles.css" rel="stylesheet"/>
+    <link href="user-admin.style.client.css" rel="stylesheet"/>
+
+    <! FONTAWESOME >
+    <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="container-fluid no-padding">
+    <div class="col-md-12">
+        <h1>User Admin</h1>
+    </div>
+    <table class="table">
+        <tr>
+            <th>
+                Username
+            </th>
+            <th>
+                Password
+            </th>
+            <th>
+                First Name
+            </th>
+            <th>
+                Last Name
+            </th>
+            <th>
+                Role
+            </th>
+            <th>
+                &nbsp;
+            </th>
+        </tr>
+        <tr class="wbdv-form">
+            <td><label for="usernameFld"></label>
+                <input id="usernameFld" class="form-control"
+                       placeholder="Username"/></td>
+            <td><label for="passwordFld"></label>
+                <input id="passwordFld" class="form-control"
+                       placeholder="Password"/></td>
+            <td><label for="firstNameFld"></label>
+                <input id="firstNameFld" class="form-control"
+                       placeholder="First Name"/></td>
+            <td><label for="lastNameFld"></label>
+                <input id="lastNameFld" class="form-control"
+                       placeholder="Last Name"/></td>
+            <td><label for="roleFld"></label>
+                <select id="roleFld" class="form-control">
+                    <option value="FACULTY">Faculty</option>
+                    <option value="STUDENT">Student</option>
+                    <option value="ADMIN">Admin</option>
+                </select></td>
+            <td><span class="float-right" style="white-space: nowrap">
+                <button class="btn"><i class="fa-2x fa fa-search wbdv-search"></i></button>
+                <button class="btn"><i class="fa-2x fa fa-plus wbdv-create"></i></button>
+                <button class="btn"><i class="fa-2x fa fa-check wbdv-update"></i></button>
+            </span>
+            </td>
+        </tr>
+        <tbody class="wbdv-tbody">
+        <tr class="wbdv-template wbdv-user">
+            <td class="wbdv-username"></td>
+            <td class="wbdv-password">&nbsp;</td>
+            <td class="wbdv-first-name"></td>
+            <td class="wbdv-last-name"></td>
+            <td class="wbdv-role"></td>
+            <td class="wbdv-actions"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<! SCRIPTS >
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="../services/user.service.client.js"></script>
+<script src="user-admin.controller.client.js"></script>
+</body>
+</html>

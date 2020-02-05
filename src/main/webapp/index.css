@@ -1,0 +1,52 @@
+.no-padding {
+    padding: 0 !important;
+}
+
+.wbdv-course-manager {
+    color: #99aab5;
+}
+
+a.wbdv-grid-layout {
+    color: #23272a;
+}
+
+a.wbdv-grid-layout:hover {
+    color: white;
+    background-color: #99aab5;
+}
+
+a.wbdv-list-layout {
+    color: #23272a;
+}
+
+a.wbdv-list-layout:hover {
+    color: white;
+    background-color: #99aab5;
+}
+
+a.wbdv-sort {
+    color: #23272a;
+}
+
+a.wbdv-sort:hover {
+    color: white;
+    background-color: #99aab5;
+}
+
+.wbdv-course-title {
+    text-align: center;
+}
+
+.wbdv-icon {
+    text-align: center;
+}
+
+.wbdv-nav:hover {
+    background-color: white;
+    color: #23272a;
+}
+
+.wbdv-delete:hover {
+    background-color: white;
+    color: #23272a;
+}
